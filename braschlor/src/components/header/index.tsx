@@ -1,28 +1,105 @@
-import { HeaderBar, Links, LinkItem, Button } from "./styles";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import {
+  HeaderBar,
+  Links,
+  LinkItem,
+  DesktopButton,
+  MobileButton,
+  MenuButton,
+  Nav,
+} from "./styles";
 
 import logo from "../../assets/imgs/logo_braschlor.png";
 
-const Header = () => (
-  <HeaderBar>
-    <img src={logo} alt="Braschlor Logo" />
-    <nav>
-      <Links>
-        <LinkItem>
-          <a href="#">Inicio</a>
-        </LinkItem>
-        <LinkItem>
-          <a href="#">Quem somos</a>
-        </LinkItem>
-        <LinkItem>
-          <a href="#">Nossos produtos</a>
-        </LinkItem>
-        <LinkItem>
-          <a href="#">Seja nosso parceiro</a>
-        </LinkItem>
-      </Links>
-    </nav>
-    <Button href="#">Contato</Button>
-  </HeaderBar>
-);
+const navigationLinks = [
+  {
+    to: "/",
+    label: "Inicio",
+    end: true,
+  },
+  {
+    to: "/quem-somos",
+    label: "Quem somos",
+  },
+  {
+    to: "/nossos-produtos",
+    label: "Nossos produtos",
+  },
+  {
+    to: "/seja-parceiro",
+    label: "Seja nosso parceiro",
+  },
+];
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCompactView, setIsCompactView] = useState(() => window.innerWidth <= 900);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const compactView = window.innerWidth <= 900;
+
+      setIsCompactView(compactView);
+
+      if (!compactView) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleMenu = () => setIsMenuOpen((currentState) => !currentState);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  return (
+    <HeaderBar>
+      <Link to="/" aria-label="Braschlor" onClick={closeMenu}>
+        <img src={logo} alt="Braschlor Logo" />
+      </Link>
+
+      {isCompactView && (
+        <MenuButton
+          type="button"
+          aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={isMenuOpen}
+          onClick={toggleMenu}
+          $isMenuOpen={isMenuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </MenuButton>
+      )}
+
+      <Nav $isMenuOpen={isMenuOpen} aria-label="Navegacao principal">
+        <Links>
+          {navigationLinks.map(({ to, label, end }) => (
+            <LinkItem key={to}>
+              <NavLink
+                to={to}
+                end={end}
+                onClick={closeMenu}
+                className={({ isActive }) => (isActive ? "is-active" : undefined)}
+              >
+                {label}
+              </NavLink>
+            </LinkItem>
+          ))}
+        </Links>
+        {isCompactView && (
+          <MobileButton to="/contato" onClick={closeMenu}>
+            Contato
+          </MobileButton>
+        )}
+      </Nav>
+
+      {!isCompactView && <DesktopButton to="/contato">Contato</DesktopButton>}
+    </HeaderBar>
+  );
+};
 
 export default Header;
