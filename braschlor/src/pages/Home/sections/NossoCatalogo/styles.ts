@@ -3,42 +3,14 @@ import { cores } from "../../../../styles";
 import { Button } from "../../../../components/header/styles";
 
 export const CatalogoSection = styled.section`
-    padding: 96px 0 88px;
+    padding: 0 0 88px;
 
     @media (max-width: 900px) {
         padding: 80px 0 72px;
     }
 
     @media (max-width: 640px) {
-        padding: 64px 0 56px;
-    }
-`
-
-export const CatalogoTitle = styled.div`
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 56px;
-    color: ${cores.black};
-
-    h1 {
-        font-size: clamp(36px, 6vw, 64px);
-    }
-
-    p {
-        margin-top: 12px;
-        font-size: clamp(18px, 2.8vw, 24px);
-    }
-
-    @media (max-width: 900px) {
-        margin-bottom: 40px;
-    }
-
-    @media (max-width: 640px) {
-        margin-bottom: 32px;
-
-        p {
-            font-size: 16px;
-        }
+        padding: 0 0 56px;
     }
 `
 

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Button } from "../../../../components/header/styles";
-import { cores } from "../../../../styles";
+import { cores, TitleAndSubtitle } from "../../../../styles";
 
 export const MaisPopularesSection = styled.section`
-    padding: 96px 0 104px;
+    padding: 0 0 104px;
     background-color: ${cores.grayLightOpacity};
 
     @media (max-width: 900px) {
@@ -11,31 +11,12 @@ export const MaisPopularesSection = styled.section`
     }
 
     @media (max-width: 640px) {
-        padding: 64px 0 72px;
-    }
-`
-
-export const MaisPopularesTitle = styled.div`
-    max-width: 760px;
-    margin: 0 auto 56px;
-    text-align: center;
-    color: ${cores.black};
-
-    h1 {
-        font-size: clamp(36px, 6vw, 64px);
+        padding: 0 0 72px;
     }
 
-    p {
-        margin-top: 14px;
-        font-size: clamp(18px, 2.8vw, 24px);
-    }
-
-    @media (max-width: 640px) {
-        margin-bottom: 36px;
-
-        p {
-            font-size: 16px;
-        }
+    ${TitleAndSubtitle} {
+        margin-top: 0;
+        padding-top: 80px;
     }
 `
 

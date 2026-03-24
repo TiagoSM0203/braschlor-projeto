@@ -5,13 +5,12 @@ import desinfetantes from "../../../../assets/imgs/desinfetante.png";
 import lavanderia from "../../../../assets/imgs/lavanderia.png";
 import automotivo from "../../../../assets/imgs/automotivo.png";
 import { Button } from "../../../../components/header/styles";
-import { Container } from "../../../../styles";
+import { Container, TitleAndSubtitle } from "../../../../styles";
 import {
   ButtonDiv,
   CatalogoCard,
   CatalogoCards,
   CatalogoSection,
-  CatalogoTitle,
 } from "./styles";
 
 const catalogoItems = [
@@ -57,13 +56,13 @@ const catalogoItems = [
 const NossoCatalogo = () => (
   <CatalogoSection>
     <Container>
-      <CatalogoTitle>
+      <TitleAndSubtitle>
         <h1>Nosso Catalogo</h1>
         <p>
           Escolha uma categoria e veja os produtos ideais para sua rotina ou
           para revender.
         </p>
-      </CatalogoTitle>
+      </TitleAndSubtitle>
 
       <CatalogoCards>
         {catalogoItems.map(({ image, alt, title, description }) => (

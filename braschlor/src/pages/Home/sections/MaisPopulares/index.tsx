@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { Container } from "../../../../styles";
+import { Container, TitleAndSubtitle } from "../../../../styles";
 import {
   MaisPopularesAction,
   MaisPopularesCard,
@@ -18,7 +18,6 @@ import {
   MaisPopularesControlButton,
   MaisPopularesControls,
   MaisPopularesSection,
-  MaisPopularesTitle,
 } from "./styles";
 import percarbonato from "../../../../assets/imgs/percarbonato.png";
 import sabao from "../../../../assets/imgs/sabao-azul.png";
@@ -105,10 +104,10 @@ const MaisPopulares = () => {
   return (
     <MaisPopularesSection>
       <Container>
-        <MaisPopularesTitle>
+        <TitleAndSubtitle>
           <h1>Mais Populares</h1>
           <p>Alta performance e rendimento: os favoritos dos nossos clientes.</p>
-        </MaisPopularesTitle>
+        </TitleAndSubtitle>
       </Container>
 
       <MaisPopularesCarouselOuter>

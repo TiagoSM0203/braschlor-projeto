@@ -40,6 +40,34 @@ export const Container = styled.div`
     }
 `
 
+export const TitleAndSubtitle = styled.div`
+    text-align: center;
+    max-width: 800px;
+    margin: 80px auto 56px;
+    color: ${cores.black};
+
+    h1 {
+        font-size: clamp(36px, 6vw, 64px);
+    }
+
+    p {
+        margin-top: 12px;
+        font-size: clamp(18px, 2.8vw, 24px);
+    }
+
+    @media (max-width: 900px) {
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 640px) {
+        margin-bottom: 36px;
+
+        p {
+            font-size: 16px;
+        }
+    }
+`
+
 export const SiteHeaderWrapper = styled.div<{ $overlay: boolean }>`
     position: ${({ $overlay }) => ($overlay ? "absolute" : "relative")};
     top: 0;
