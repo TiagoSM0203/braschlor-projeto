@@ -113,6 +113,19 @@ export const AvaliacaoCards = styled.div`
     }
 `
 
+export const AvaliacaoStars = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: ${cores.blueLight};
+
+    svg {
+        width: 22px;
+        height: 22px;
+        display: block;
+    }
+`
+
 export const AvaliacaoCard = styled.div`
     display: flex;
     flex-direction: column;
@@ -122,10 +135,6 @@ export const AvaliacaoCard = styled.div`
     height: 200px;
     border-radius: 36px;
     padding: 20px;
-
-    img {
-        width: 140px;
-    }
 
     p {
         margin: 12px 0 12px 0;

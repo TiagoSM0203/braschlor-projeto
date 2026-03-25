@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { contactLink, navigationLinks } from "../../data/navigation";
 import {
   HeaderBar,
   Links,
@@ -11,26 +12,6 @@ import {
 } from "./styles";
 
 import logo from "../../assets/imgs/logo_braschlor.png";
-
-const navigationLinks = [
-  {
-    to: "/",
-    label: "Inicio",
-    end: true,
-  },
-  {
-    to: "/quem-somos",
-    label: "Quem somos",
-  },
-  {
-    to: "/nossos-produtos",
-    label: "Nossos produtos",
-  },
-  {
-    to: "/seja-parceiro",
-    label: "Seja nosso parceiro",
-  },
-];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -91,13 +72,13 @@ const Header = () => {
           ))}
         </Links>
         {isCompactView && (
-          <MobileButton to="/contato" onClick={closeMenu}>
-            Contato
+          <MobileButton to={contactLink.to} onClick={closeMenu}>
+            {contactLink.label}
           </MobileButton>
         )}
       </Nav>
 
-      {!isCompactView && <DesktopButton to="/contato">Contato</DesktopButton>}
+      {!isCompactView && <DesktopButton to={contactLink.to}>{contactLink.label}</DesktopButton>}
     </HeaderBar>
   );
 };

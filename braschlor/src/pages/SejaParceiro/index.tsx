@@ -5,7 +5,6 @@ const SejaParceiroPage = () => (
     <Container>
       <PageContentCard>
         <PageEyebrow>Parcerias</PageEyebrow>
-        <h1>Seja nosso parceiro</h1>
         <p>
           Esta pagina esta separada para voce montar a proposta comercial, os beneficios
           da revenda e os pontos de conversao com mais liberdade.

@@ -4,7 +4,7 @@ import { cores } from "../../styles";
 
 export const HeaderBar = styled.header`
     position: relative;
-    padding: 24px 0;
+    padding: 10px 0;
     color: ${cores.white};
     display: flex;
     justify-content: space-between;

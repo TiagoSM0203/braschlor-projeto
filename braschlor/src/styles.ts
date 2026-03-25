@@ -68,22 +68,9 @@ export const TitleAndSubtitle = styled.div`
     }
 `
 
-export const SiteHeaderWrapper = styled.div<{ $overlay: boolean }>`
-    position: ${({ $overlay }) => ($overlay ? "absolute" : "relative")};
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-    padding-top: ${({ $overlay }) => ($overlay ? "16px" : "0")};
-    background-color: ${({ $overlay }) => ($overlay ? "transparent" : cores.blueDark)};
-    box-shadow: ${({ $overlay }) =>
-      $overlay ? "none" : "0 14px 34px rgba(0, 0, 0, 0.12)"};
-`
-
 export const PageSection = styled.section`
     min-height: calc(100vh - 110px);
     padding: 72px 0 96px;
-    background: linear-gradient(180deg, rgba(0, 69, 117, 0.08) 0%, rgba(140, 198, 75, 0.06) 100%);
 `
 
 export const PageContentCard = styled.div`

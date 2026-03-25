@@ -1,4 +1,5 @@
 import Avaliacao from "./sections/Avaliacao";
+import EntreEmContato from "./sections/EntreEmContato";
 import Hero from "./sections/Hero";
 import MaisPopulares from "./sections/MaisPopulares";
 import NossoCatalogo from "./sections/NossoCatalogo";
@@ -11,6 +12,7 @@ const HomePage = () => (
     <MaisPopulares />
     <PorqueNosEscolher />
     <Avaliacao />
+    <EntreEmContato />
   </>
 );
 
